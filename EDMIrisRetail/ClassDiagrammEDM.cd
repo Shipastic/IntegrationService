@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EDMIrisRetail.Model.Contractor" Collapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAQAAAAAAAAAAAAAAAQAgAAIAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Model\Contractor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.DepartmentIris" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAACQAACAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Model\DepartmentIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.DocReload" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Model\DocReload.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.DocumentIrisIn" Collapsed="true">
+    <Position X="8" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAEAAgAAAAAgAQAAAAIAEAAABAAAAAAA=</HashCode>
+      <FileName>Model\DocumentIrisIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.DocumentIrisOut" Collapsed="true">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAEAAgAAAAAgAQAAAAIAEAAABAAAAAAA=</HashCode>
+      <FileName>Model\DocumentIrisOut.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.DocumentsFilterIris" Collapsed="true">
+    <Position X="2.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAIAAQAAAAAAAAAACAAgAAAAQAAAA=</HashCode>
+      <FileName>Model\DocumentsFilterIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.DocumentsMoveOperationIris" Collapsed="true">
+    <Position X="4.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\DocumentsMoveOperationIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.Facade" Collapsed="true">
+    <Position X="6.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Model\Facade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.MessageIris" Collapsed="true">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MessageIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.MessagePathToPostIris" Collapsed="true">
+    <Position X="9.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgABAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MessagePathToPostIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.ParcedDocument" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCgAAAAAAAgAAggAAAAAAAAAIAAAAAAAAAECAgABA=</HashCode>
+      <FileName>Model\ParcedDocument.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.ResolutionRequestAttachmentClass" Collapsed="true">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAgACAAAAAgAwAAAAAACgAAAAgAAAAA=</HashCode>
+      <FileName>Model\ResolutionRequestAttachmentClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.ResolutionRequestCancellationAttachmentIris" Collapsed="true">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAEAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Model\ResolutionRequestCancellationAttachmentIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.RessolutionAttachmentClass" Collapsed="true">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\RessolutionAttachmentClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.UserIris" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABIAAAAAAAQABAIAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Model\UserIris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.WorkWithDoc" Collapsed="true">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAQABAAAAAAAAQAAAAAAAAAAEgAggAAAQADAAABgA=</HashCode>
+      <FileName>Model\WorkWithDoc.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Model.WorkWithDocSign" Collapsed="true">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQABAAAAAAAAQAAAAAAAAAAAAAggBAAAABAAAAgA=</HashCode>
+      <FileName>Model\WorkWithDocSign.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diadoc.Api.Proto.Events.ResolutionAttachment" Collapsed="true">
+    <Position X="8" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diadoc.Api.Proto.UserV2" Collapsed="true">
+    <Position X="9.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diadoc.Api.Proto.Events.ResolutionRequestAttachment" Collapsed="true">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diadoc.Api.Proto.Events.ResolutionRequestCancellationAttachment" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diadoc.Api.Proto.Events.MessagePatchToPost" Collapsed="true">
+    <Position X="11.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diadoc.Api.Proto.Department" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

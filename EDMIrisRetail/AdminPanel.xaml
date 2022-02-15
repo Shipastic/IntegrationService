@@ -1,0 +1,711 @@
+﻿<Window x:Class="EDMIrisRetail.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EDMIrisRetail"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="AdminPanel" Height="700" Width="1200">
+    <Grid Background="Black" MaxHeight="700" MaxWidth="1200">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="170"/>
+            <ColumnDefinition Width="628*"/>
+        </Grid.ColumnDefinitions>
+        <Border  VerticalAlignment="Center" Padding="10" MaxWidth="1200" CornerRadius="20"  MaxHeight="700"  Margin="0,36,0,35" Background="Gray" Grid.ColumnSpan="2">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Color="LightGray" ShadowDepth="10" />
+            </Border.Effect>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="0,0,0,0" Grid.ColumnSpan="3" Grid.Row="0">
+                    <TextBlock Text="Панель управления администратора" FontSize="20" FontWeight="Bold" Margin="0 0 0 10" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </StackPanel>
+                <!--Кнопки управления -->
+                <Grid x:Name="SlideMenu" Grid.Column="0" Grid.Row="1" Margin="0,0,0,21">
+                    <Border BorderThickness="2,0,2,0" BorderBrush="#FF303031" Background="#FF2B7657" MaxHeight="700" VerticalAlignment="Top" Height="480">
+                        <StackPanel Margin="0,0,-2,0" MaxWidth="1200"  Orientation="Vertical" MaxHeight="700">
+                            <Button x:Name="BtnEmployee" 
+                                    MaxWidth="170"    
+                                    MaxHeight="100" 
+                                    Height="80"
+                                    Click="BtnEmployee_Click" 
+                                    Style="{StaticResource MaterialDesignFlatAccentButton}" 
+                                    FontSize="16" 
+                                    BorderThickness="1" 
+                                    BorderBrush="#FF1E2924">
+                                <StackPanel x:Name="emp" Orientation="Vertical">
+                                    <Image Source="Source/emp_3.png" Stretch="None" />
+                                    <TextBlock Text="Сотрудники"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="BtnDepartments"                                         
+                                        MaxWidth="170"   
+                                        MaxHeight="100" 
+                                        Height="80" 
+                                        Click="BtnDepartments_Click" 
+                                        Style="{StaticResource MaterialDesignFlatAccentButton}" 
+                                        FontSize="16" 
+                                        BorderThickness="1" 
+                                        BorderBrush="#FF1E2924" HorizontalAlignment="Right" Width="169" Margin="0,0,-0.2,0">
+                                <StackPanel x:Name="organization" Orientation="Vertical">
+                                    <Image Source="Source/organization_5.png" Stretch="None" />
+                                    <TextBlock Text="Подразделения"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="BtnOrganization" 
+                                    MaxWidth="170"   
+                                    MaxHeight="100" 
+                                    Height="80" 
+                                    Click="BtnOrganization_Click" 
+                                    Style="{StaticResource MaterialDesignFlatAccentButton}" 
+                                    FontSize="16" 
+                                    BorderThickness="1" 
+                                    BorderBrush="#FF1E2924">
+                                <StackPanel x:Name="contragents" Orientation="Vertical">
+                                    <Image Source="Source/contrag.png" Stretch="None" />
+                                    <TextBlock Text="Поставщики"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="BtnDoc"
+                                    MaxWidth="170"   
+                                    MaxHeight="100" 
+                                    Height="80" 
+                                    Click="BtnDoc_Click"          
+                                    Style="{StaticResource MaterialDesignFlatAccentButton}" 
+                                    FontSize="16" 
+                                    BorderThickness="1" 
+                                    BorderBrush="#FF1E2924">
+                                <StackPanel x:Name="documents" Orientation="Vertical">
+                                    <Image Source="Source/doc_2.png" Stretch="None" />
+                                    <TextBlock Text="Документы Диадок"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="BtnInDB"    
+                                   MaxWidth="170"   
+                                    MaxHeight="100" 
+                                    Height="80"      
+                                    Style="{StaticResource MaterialDesignFlatAccentButton}" 
+                                    FontSize="16" 
+                                    BorderThickness="1" 
+                                    BorderBrush="#FF1E2924" Click="BtnInDB_Click">
+                                <StackPanel x:Name="documentsDB" Orientation="Vertical">
+                                    <Image Source="Source/doc_2.png" Stretch="None" />
+                                    <TextBlock Text="Документы из БД"/>
+                                </StackPanel>
+                            </Button>
+
+                            <Button x:Name="BtnRun" 
+                                    MaxWidth="170"   
+                                    MaxHeight="100" 
+                                    Height="80"           
+                                    Style="{StaticResource MaterialDesignFlatAccentButton}" 
+                                    FontSize="16" 
+                                    BorderThickness="1" 
+                                    BorderBrush="#FF1E2924" Click="BtnRun_Click">
+                                <StackPanel x:Name="mainservice" Orientation="Vertical">
+                                    <Image Source="Source/run.png" Stretch="None" />
+                                    <TextBlock Text="Старт"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <!--Кнопки управления Конец-->
+
+                <!--Поиск данных в документах -->
+                <StackPanel x:Name="tabDocuments" Grid.Column="1" Grid.Row="1" Visibility="Visible">
+
+                    <Border x:Name="doc" BorderBrush="Black" CornerRadius="20" Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}">
+                        <ScrollViewer x:Name="ScrollDocIn"
+                                  HorizontalScrollBarVisibility="Visible"
+                                  VerticalScrollBarVisibility="Visible"
+                                  Height="500" Style="{StaticResource MaterialDesignScrollViewer}">
+
+                            <TabControl x:Name      = "tabUPDDoc" 
+                                Visibility  = "Visible"
+                                Style       = "{StaticResource MaterialDesignNavigatilRailTabControl}" 
+                                MaxHeight   = "700"  RenderTransformOrigin="0.499,0.503"
+                            Margin="5,5,5,0">
+
+                                <TabItem         Header     = "UPD" 
+                                 Background = "Green" 
+                                 x:Name="UPDDoc"
+                                 IsSelected="True"  Width="200">
+                                    <DataGrid x:Name      = "itemInDoc" 
+                                      Visibility          = "Visible" 
+                                      AutoGenerateColumns = "False" 
+                                      CanUserAddRows      = "False"
+                                      CanUserSortColumns  = "True"
+                                      CanUserDeleteRows   = "False"
+                                      SelectionMode       = "Single"
+                                      Style               = "{StaticResource MaterialDesignDataGrid}" 
+                                      MaxHeight           = "380"
+                                      GridLinesVisibility ="All" Margin="0,-2,0,90"
+              
+                                              ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Отправитель"              Binding="{Binding FromDep}"    Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Название документа"       Binding="{Binding Title}"      Width="Auto">
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Тег подразделения"        Binding="{Binding ShortName}"  Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Статус"                   Binding="{Binding Status}"     Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дата получения"           Binding="{Binding CreateDate}" Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дополнительный статус"    Binding="{Binding ToDep}"      Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Entity ID"                Binding="{Binding EntityID}"   Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Message ID"               Binding="{Binding MessageID}"  Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </TabItem>
+
+                                <TabItem         Header     = "SFRevision" 
+                                 Background = "Green" 
+                                 x:Name="SFDoc"
+                                 IsSelected="True"  Width="200">
+                                    <DataGrid x:Name      = "itemSFDoc" 
+                                      Visibility          = "Visible" 
+                                      AutoGenerateColumns = "False" 
+                                      CanUserAddRows      = "False"
+                                      CanUserSortColumns  = "True"
+                                      CanUserDeleteRows   = "False"
+                                      SelectionMode       = "Single"
+                                      Style               = "{StaticResource MaterialDesignDataGrid}" 
+                                      MaxHeight           = "380"
+                                      GridLinesVisibility ="All" Margin="0,-2,0,90"
+              
+                                              ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Отправитель"              Binding="{Binding FromDep}"    Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Название документа"       Binding="{Binding Title}"      Width="Auto">
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Тег подразделения"        Binding="{Binding ShortName}"  Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Статус"                   Binding="{Binding Status}"     Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дата получения"           Binding="{Binding CreateDate}" Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дополнительный статус"    Binding="{Binding ToDep}"      Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Строка 1а"                Binding="{Binding Title}"   Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </TabItem>
+
+                                <TabItem         Header     = "SFCorrection" 
+                                 Background = "Green" 
+                                 x:Name="SFCorDoc"
+                                 IsSelected="True"  Width="200">
+                                    <DataGrid x:Name      = "itemSFCorDoc" 
+                                      Visibility          = "Visible" 
+                                      AutoGenerateColumns = "False" 
+                                      CanUserAddRows      = "False"
+                                      CanUserSortColumns  = "True"
+                                      CanUserDeleteRows   = "False"
+                                      SelectionMode       = "Single"
+                                      Style               = "{StaticResource MaterialDesignDataGrid}" 
+                                      MaxHeight           = "380"
+                                      GridLinesVisibility ="All" Margin="0,-2,0,90"
+              
+                                              ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Отправитель"              Binding="{Binding FromDep}"    Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Название документа"       Binding="{Binding Title}"      Width="Auto">
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Тег подразделения"        Binding="{Binding ShortName}"  Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Статус"                   Binding="{Binding Status}"     Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дата получения"           Binding="{Binding CreateDate}" Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Дополнительный статус"    Binding="{Binding ToDep}"      Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                            <DataGridTextColumn Header="Строка 1а"                Binding="{Binding Title}"   Width="Auto" >
+                                                <DataGridTextColumn.HeaderStyle>
+                                                    <Style TargetType="DataGridColumnHeader">
+                                                        <Setter Property="Background" Value="Black"/>
+                                                        <Setter Property="Foreground" Value="White"/>
+                                                    </Style>
+                                                </DataGridTextColumn.HeaderStyle>
+                                            </DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </TabItem>
+                            </TabControl>
+                        </ScrollViewer>
+                    </Border>
+                </StackPanel>
+                <StackPanel x:Name="tabDocumentsDB" Grid.Column="1" Grid.Row="1" Visibility="Visible">
+                        <Border x:Name="docDB" BorderBrush="Black" CornerRadius="20" Style="{StaticResource MaterialDesignToolBarMainPanelBorderStyle}">
+                            <ScrollViewer x:Name="ScrollDocInDB"
+                                  HorizontalScrollBarVisibility="Visible"
+                                  VerticalScrollBarVisibility="Visible"
+                                  Height="500" Style="{StaticResource MaterialDesignScrollViewer}">
+
+                            <DataGrid x:Name      = "itemOutDoc" 
+                                      Visibility          = "Visible" 
+                                      AutoGenerateColumns = "False" 
+                                      CanUserAddRows      = "False"
+                                      CanUserSortColumns  = "True"
+                                      CanUserDeleteRows   = "False"
+                                      SelectionMode       = "Single"
+                                      Style               = "{StaticResource MaterialDesignDataGrid}" 
+                                      MaxHeight           = "380"
+                                      GridLinesVisibility ="All"
+                                         
+                                               ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                                <DataGrid.Columns>
+                                    
+                                    <DataGridTextColumn Header="Название документа"       Binding="{Binding NameFile}"      Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                    <!--<DataGridTextColumn Header="Содержимое документа"       Binding="{Binding DocumentIn}"      Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>-->
+                                    <DataGridTextColumn Header="Тег подразделения"        Binding="{Binding cntTag}"  Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="Статус"                   Binding="{Binding status}"     Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="Дата получения"           Binding="{Binding InsertDateDoc}" Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="Статус согласования РУ"    Binding="{Binding isArrove}"      Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="Entity ID"                Binding="{Binding entityId}"   Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                    <DataGridTextColumn Header="Message ID"               Binding="{Binding messageId}"  Width="Auto" >
+                                        <DataGridTextColumn.HeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Black"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                            </Style>
+                                        </DataGridTextColumn.HeaderStyle>
+                                    </DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        </Border>
+                    </StackPanel>
+                    <!-- Конец поиска по документам -->
+
+                    <!--Грид для вывода документов -->
+                <!--Грид для вывода документов Конец -->
+
+                <!--Грид для вывода Сотрудников -->
+                <StackPanel Grid.Column="1" Grid.Row="1" x:Name="panelEmp" Visibility="Hidden">
+                    <ScrollViewer x:Name                        ="ScrollEmp"
+                                  HorizontalScrollBarVisibility ="Auto"
+                                  VerticalScrollBarVisibility   ="Auto"
+                                  Height                        ="500" 
+                                  Style                         ="{StaticResource MaterialDesignScrollViewer}">
+                        <DataGrid x:Name              = "gridEmployee" 
+                                  Visibility          = "Visible" 
+                                  AutoGenerateColumns = "False" 
+                                  CanUserAddRows      = "False"
+                                  CanUserSortColumns  = "True"
+                                  CanUserDeleteRows   = "False"
+                                  SelectionMode       = "Single"
+
+                                   ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Имя"           Binding="{Binding Path=FirstNameIris}"     Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Фамилия"       Binding="{Binding Path=LastNameIris}"      Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Отчество"      Binding="{Binding Path=MiddleNameIris}"    Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Логин"         Binding="{Binding Path=LoginIris}"         Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Должность"     Binding="{Binding Path=PositionIris}"      Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Подразделение" Binding="{Binding Path=DepartmentTagIris}" Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
+                </StackPanel>
+                <!--Грид для вывода Сотрудников Конец -->
+
+                <!--Грид для вывода Подразделения -->
+                <StackPanel Grid.Column="1" Grid.Row="1" x:Name="panelDepart" Visibility="Hidden">
+                    <!--Поиск по подразделенниям 
+                    <TextBlock x:Name="SearchTextDep" Text="Поиск по параметрам" FontSize="14" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="5 0 0 5" HorizontalAlignment="Center"></TextBlock>
+                    <DockPanel>
+                        <TextBlock Text="Название" Width="100" MaxWidth="100" FontSize="14" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="5 0 5 5" ></TextBlock>
+                        <TextBox x:Name="NameDepartSearch"  Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" Margin="5 0 5 5"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Text="Тег" Width="100" MaxWidth="100" FontSize="14" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="5 0 5 5"></TextBlock>
+                        <TextBox x:Name="TagSearch"  Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"   Margin="5 0 5 5"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <Button x:Name="BtnSearchDepart" Content="Найти" MaxWidth="140" Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}" HorizontalAlignment="Left" Margin="5 0 0 10"/>
+                        <Button x:Name="BtnSearchCancellDepart" Content="Отменить" MaxWidth="140" Style="{StaticResource MaterialDesignFlatSecondaryButton}" HorizontalAlignment="Right" Margin="0 0 5 10"/>
+                    </DockPanel>
+
+                    <Separator Margin="0 5 0 5" Style="{StaticResource MaterialDesignDarkSeparator}" Height="10" Background="#e4e4"/>
+                    Конец поиска по подразделениям -->
+                    <ScrollViewer x:Name                        ="ScrollDep"
+                                  HorizontalScrollBarVisibility ="Auto"
+                                  VerticalScrollBarVisibility   ="Auto"
+                                  Height                        ="500" 
+                                  Style                         ="{StaticResource MaterialDesignScrollViewer}">
+                        <DataGrid x:Name="gridDepartments" 
+                             Visibility="Visible" 
+                                  AutoGenerateColumns="False" 
+                                  CanUserAddRows="False"
+                                  CanUserSortColumns="True"
+                                  CanUserDeleteRows="False"
+                                  SelectionMode="Single"
+
+                                   ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Название подразделения" 
+                                                    Binding="{Binding Path=DepartNameIris}" 
+                                                    Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Тег подразделения" 
+                                                    Binding="{Binding Path=AbbreviationIris}" 
+                                                    Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="КПП" 
+                                                    Binding="{Binding Path=KppIris}" 
+                                                    Width="Auto">
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Адрес" 
+                                                    Binding="{Binding Path=AddressIris}" 
+                                                    Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
+                </StackPanel>
+                <!--Грид для вывода Подразделения Конец -->
+
+                <!--Грид для вывода Поставщики -->
+                <StackPanel  x:Name="panelContragents" Grid.Column="1" Grid.Row="1" Visibility="Hidden">
+                    <!--Поиск по поставщикам 
+                    <TextBlock x:Name="SearchTextContr" Text="Поиск по параметрам" FontSize="14" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="5 0 0 5" HorizontalAlignment="Center"></TextBlock>
+                    <DockPanel>
+                        <TextBlock Text="ИНН" Width="100" MaxWidth="100" FontSize="14" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="5 0 5 5" ></TextBlock>
+                        <TextBox x:Name="INNSearch"  Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" Margin="5 0 5 5"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <TextBlock Text="КПП" Width="100" MaxWidth="100" FontSize="14" Style="{StaticResource MaterialDesignCaptionTextBlock}" Margin="5 0 5 5"></TextBlock>
+                        <TextBox x:Name="KPPSearch"  Style="{StaticResource MaterialDesignComboBoxEditableTextBox}"   Margin="5 0 5 5"></TextBox>
+                    </DockPanel>
+                    <DockPanel>
+                        <Button x:Name="BtnSearchContractor" Content="Найти" MaxWidth="140" Style="{StaticResource MaterialDesignFlatSecondaryMidBgButton}" HorizontalAlignment="Left" Margin="5 0 0 10"/>
+                        <Button x:Name="BtnSearchCancellContractor" Content="Отменить" MaxWidth="140" Style="{StaticResource MaterialDesignFlatSecondaryButton}" HorizontalAlignment="Right" Margin="0 0 5 10"/>
+                    </DockPanel>
+
+                    <Separator Margin="0 5 0 5" Style="{StaticResource MaterialDesignDarkSeparator}" Height="10" Background="#e4e4"/>
+                     Конец поиска по документам -->
+
+                    <ScrollViewer x:Name                        ="ScrollContr"
+                                  HorizontalScrollBarVisibility ="Auto"
+                                  VerticalScrollBarVisibility   ="Auto"
+                                  Height                        ="500" 
+                                  Style                         ="{StaticResource MaterialDesignScrollViewer}">
+                        <DataGrid x:Name="gridContractors" 
+                              Visibility="Hidden" 
+                              AutoGenerateColumns="False" 
+                              CanUserAddRows="False"
+                              CanUserSortColumns="True"
+                              CanUserDeleteRows="False"
+                              SelectionMode="Single"
+
+                                   ColumnHeaderStyle="{StaticResource MaterialDesignDataGridColumnHeader}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Название компании" Binding="{Binding Path=Name}"      Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="ИНН"               Binding="{Binding Path=INN}"       Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="КПП"               Binding="{Binding Path=KPP}"       Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Header="Дата добавления"   Binding="{Binding Path=dateStart}" Width="Auto" >
+                                    <DataGridTextColumn.HeaderStyle>
+                                        <Style TargetType="DataGridColumnHeader">
+                                            <Setter Property="Background" Value="Black"/>
+                                            <Setter Property="Foreground" Value="White"/>
+                                        </Style>
+                                    </DataGridTextColumn.HeaderStyle>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </ScrollViewer>
+                </StackPanel>
+                <!--Грид для вывода Поставщики Конец -->
+
+                <StackPanel  Grid.Column="2" Grid.Row="1">
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

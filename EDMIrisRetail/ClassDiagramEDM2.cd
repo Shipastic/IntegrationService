@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EDMIrisRetail.Controller.ContentDocumentController">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Controller\ContentDocumentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.ContractorController" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Controller\ContractorController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.DepartmentIrisController" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAQAABQAAAQAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Controller\DepartmentIrisController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.DocReloadController" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controller\DocReloadController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.DocumentFilterIrisController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAA=</HashCode>
+      <FileName>Controller\DocumentFilterIrisController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.DocumentIrisController" BaseTypeListCollapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAgAAgAAEAAAAAAAQAAgQAgIwABAAAQAAAQEIAAAA=</HashCode>
+      <FileName>Controller\DocumentIrisController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.DocumentMoveOperationIrisController" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAQAAAAA=</HashCode>
+      <FileName>Controller\DocumentMoveOperationIrisController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.ParcedDocumentController" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAlAAAAAoBAIAAAAAABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Controller\ParcedDocumentController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.UserIrisController" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABAAAAAAAAgAAAAIAAAAAgAAAAIIAEAA=</HashCode>
+      <FileName>Controller\UserIrisController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EDMIrisRetail.Controller.WorkWithDocController" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAQCAoEIABIABAAEBAAMDJgAFDOtBABEoEQACUQAnAQ=</HashCode>
+      <FileName>Controller\WorkWithDocController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="EDMIrisRetail.Interface.IAllContractors">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Interface\IAllContractors.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IAllDepartments">
+    <Position X="15.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAABQAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Interface\IAllDepartments.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IAllUserIrisList">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAABAAAAAAAAgAAAAAAAAAAgAAAAAIAEAA=</HashCode>
+      <FileName>Interface\IAllUserIrisList.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IDocReload">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IDocReload.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IDocumentFilter">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAQAAA=</HashCode>
+      <FileName>Interface\IDocumentFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IDocumentIrisIn">
+    <Position X="18.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAgAAAAAEAAAAAAAAAAgAAgIwABAAAQAAAAAIAAAA=</HashCode>
+      <FileName>Interface\IDocumentIrisIn.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IDocumentIrisOut">
+    <Position X="18.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Interface\IDocumentIrisOut.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IDocumentMoveOperationIris">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IDocumentMoveOperationIris.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IParceDocument">
+    <Position X="15.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAkAAAAAABAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IParceDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IStateDocument">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IStateDocument.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IWorkWithDoc">
+    <Position X="7.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Interface\IWorkWithDoc.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EDMIrisRetail.Interface.IWorkWithDocSign">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interface\IWorkWithDocSign.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
