@@ -28,7 +28,7 @@ namespace EDMIrisRetail.Controller
 
             #region парсинг xml
 
-            string pathFile = @"\\192.168.48.25\reports_recieve\diadocValidData.xml";
+            string pathFile = @"\\ip_address\reports_recieve\diadocValidData.xml";
 
             foreach (var cont in contents.Where(c => c.Data != null))
             {
