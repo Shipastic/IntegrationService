@@ -60,13 +60,6 @@ namespace EDMIrisRetail.View
                 countEmpGet.Text = work.CountUserIris.ToString();
 
                 countDepartGet.Text = work.CountDepartmentIris.ToString();
-
-                //if (work.ResolutionStatus.Contains(Constants.docNotExist))
-                //{
-                //    DataRowView dataRow = (DataRowView)DocForRel.Items.CurrentItem;
-                //    var index = DocForRel.CurrentItem;
-                //    rowStatus.Foreground = Brushes.Green;
-                //}
             }
 
             DataContext = this;
