@@ -151,12 +151,9 @@ namespace EDMIrisRetail.Controller
                 }
                 catch (OracleException e)
                 {
-                    // logger.Error(e, $"Номер ошибки - {e.Number}\n Текст ошибки: {e.Message}\n");
-                    // logger.Info("Выполняется попытка восстановить подключение...\n");
                     OracleConnection.ClearPool(oracleConnection);
                     oracleConnection.Close();
                     oracleConnection.Open();
-                    //  logger.Info("Подключение восстановлено\n");
                 }
                 catch (Exception exp)
                 {
@@ -327,8 +324,6 @@ namespace EDMIrisRetail.Controller
 
                 catch (OracleException e)
                 {
-                   // logger.Error(e, $"Номер ошибки - {e.Number}\n Текст ошибки: {e.Message}\n");
-                   // logger.Info("Выполняется попытка восстановить подключение...\n");
                     OracleConnection.ClearPool(oracleConnection);
                     oracleConnection.Close();
                     oracleConnection.Open();
