@@ -111,7 +111,7 @@ namespace EDMIrisRetail.Controller
             ////Создаем каталог для хранения файлов печатных форм
             //var dir = @"\\192.168.48.25\reports_recieve\PrintForm";
 
-            //string pathFile = @"\\192.168.48.25\reports_recieve\diadocValidData.xml";
+            //string pathFile = @"\\ip_address\reports_recieve\diadocValidData.xml";
 
             //foreach (var cont in contents.Where(c => c.Data != null))
             //{
@@ -132,25 +132,7 @@ namespace EDMIrisRetail.Controller
 
             // pathFilePrint = $"{dir}\\{contentFileName}";
 
-            //    //Создаем файл   
-            //    File.WriteAllBytes(pathFilePrint, formResult.Content.Bytes);
-
-            //    SautinSoft.PdfFocus pdfFocus = new SautinSoft.PdfFocus();
-
-            //    pdfFocus.XmlOptions.ConvertNonTabularDataToSpreadsheet = false;
-
-            //    pdfFocus.OpenPdf(pathFilePrint);
-            //    pdfFocus.ToXml(pathFile);
-
-
-
-            ////using (FileStream fileStream1 = new FileStream(pathFile, FileMode.Create))
-            ////{
-            ////    fileStream1.Write(contentFile, 0, contentFile.Length);
-            ////}
-
-            //XDocument xLDoc = XDocument.Load(pathFile);
-            //}
+            
             #endregion
             //================================
 
