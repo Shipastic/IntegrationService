@@ -14,7 +14,7 @@ namespace EDMIrisRetail.Model
     {
         EDMClass eDMClass = new EDMClass();
 
-        OracleConnectionState connectionState;// = OracleConnectionState();
+        OracleConnectionState connectionState;
         public void SendMessagePath(Document document, ParcedDocument parcedDocument,
                                             string messageCom, string messageCom2, int maxLabel,
                                             Message mesContant, string usrId, List<Diadoc.Api.Proto.Departments.Department> departments, ResolutionType resolutionType, Contractor contractor)
