@@ -155,7 +155,7 @@ namespace EDMIrisRetail
         {
             string pathFilePrint = "";
             //Создаем каталог для хранения файлов печатных форм
-            var dir = new DirectoryInfo(@"\\192.168.48.25\reports_recieve\PrintForm");
+            var dir = new DirectoryInfo(@"\\ip_address\reports_recieve\PrintForm");
 
             if (!dir.Exists)
             {
