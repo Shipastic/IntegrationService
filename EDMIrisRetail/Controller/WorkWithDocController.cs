@@ -160,11 +160,7 @@ namespace EDMIrisRetail.Controller
 
                 foreach (var item in ListDoc.Documents)
                 {
-                    if(item.Title != "УПД №320/3082790382-6/329 от 11.02.22")
-                    {
-                        continue;
-                    }
-
+                   
                     EDMClass eDMClass = new EDMClass();
 
                     MessageToPostIris messageTo = new MessageToPostIris();
@@ -521,41 +517,7 @@ namespace EDMIrisRetail.Controller
                         ListDocNew.Add(docNew);
                         GetDocNew(ListDocNew);
                 }
-
-
-
-                ///Цикл по всем входящим документам поставщика
-                //foreach (var docum in documentList)
-                //{
-                //    ///Получаем всю цепочку сообщений для данного документа
-                //    var mesContant = messageIris.GetMessageED(docum);
-
-                //    ///Получаем все содержимое из всей цепочки сообщений
-                //    var contantMessage = contentDocumentController.GetContentDocuments(mesContant, maxLabel);
-
-                //    ParcedDocument parced = new ParcedDocument();
-
-                //    ResultParce = parcedDocument_.ExecParceDoc(contr, docum, mesContant, contantMessage, parced, work);
-
-                //    if (ResultParce == null || ResultParce.Ids == 0)
-                //    { continue; }
-
-                //    ///Получаем пользователя для согласования документа
-                //    var curUser = userIrisController.GetId(ResultParce, ListUserIris);
-
-                //    msg = SetFirstStateDocument(ResultParce);
-
-                //    //work.ResolutionStatus = msg;
-
-                //    maxLabel++;
-
-                //    msg2 = SetSecondStatedocument(ResultParce, work);
-
-                //    work.ResolutionStatus += $"{msg}\n{msg2}\n";
-
-                //    work.ResolutionStatus += facade.SendMessagePath(docum, ResultParce, msg, msg2, maxLabel, mesContant, curUser, ListDepart, resolutionType, contr);
-                //}
-
+                
                 foreach (var docSign in docListWuthRecSigned)
                 {
                     var mesContant = messageIris.GetMessageED(docSign);
